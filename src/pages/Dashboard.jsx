@@ -71,7 +71,7 @@ const Dashboard = () => {
 
   const handleAdd = async (e) => {
     e.preventDefault();
-    const response = await fetch(`${import.meta.env.VITE_APP_API_URL}_URL}products`, {
+    const response = await fetch(`${import.meta.env.VITE_APP_API_URL}products`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,
