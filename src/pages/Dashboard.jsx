@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import Navbar from '../components/Navbar';
 import AddProduct from '../components/AddProduct';
 import EditProduct from '../components/EditProduct';
+import Footer from '../components/Footer';
 
 
 const Dashboard = () => {
@@ -147,39 +148,38 @@ const Dashboard = () => {
 
   return (
     <>
-      <Navbar />
-      <div className="min-h-screen bg-gradient-to-b from-blue-500 to-blue-900 p-8">
-        <h2 className="text-4xl font-extrabold text-white text-center mb-8">
+      <div className=" bg-gradient-to-b from-blue-500 to-blue-900 p-6">
+        <h2 className="text-3xl font-bold text-white text-center mb-6">
           Dashboard Produk
         </h2>
-        <div className="container mx-auto bg-white rounded-lg shadow-lg p-6">
-          <div className="flex justify-between items-center mb-6">
-            <h3 className="text-xl font-semibold">Daftar Produk</h3>
+        <div className="container mx-auto bg-white rounded-lg shadow-lg p-5 md:p-8">
+          <div className="flex justify-between items-center mb-4 md:mb-6">
+            <h3 className="text-lg md:text-xl font-semibold">Daftar Produk</h3>
             <button
               onClick={() => setIsAdding(true)}
-              className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300"
+              className="px-3 md:px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition duration-300"
             >
               Tambah Produk
             </button>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {products.map((product) => (
               <div
                 key={product._id}
-                className="bg-blue-100 p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300"
+                className="bg-blue-100 p-3 md:p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300"
               >
-                <h4 className="text-lg font-bold">{product.nama}</h4>
-                <p>Qty: {product.qty}</p>
-                <div className="mt-4 flex justify-between">
+                <h4 className="text-md md:text-lg font-bold">{product.nama}</h4>
+                <p className="text-sm md:text-base">Qty: {product.qty}</p>
+                <div className="mt-3 flex justify-between">
                   <button
                     onClick={() => handleEdit(product)}
-                    className="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300"
+                    className="px-2 md:px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300"
                   >
                     Edit
                   </button>
                   <button
                     onClick={() => handleDelete(product._id)}
-                    className="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 transition duration-300"
+                    className="px-2 md:px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 transition duration-300"
                   >
                     Delete
                   </button>
@@ -204,7 +204,6 @@ const Dashboard = () => {
               setIsEditing={setIsEditing}
             />
           )}
-
         </div>
       </div>
 
